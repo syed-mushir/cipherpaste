@@ -1,0 +1,49 @@
+{
+  "name": "cipherpaste",
+  "version": "1.0.0",
+  "description": "Cipher Paste is an open source tool that allows temporary text pasting which is fully encrypted on client side.",
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "redis",
+    "encryption",
+    "web-crypto",
+    "aes-gcm",
+    "client-side-encryption",
+    "zero-knowledge",
+    "secure-paste",
+    "pastebin",
+    "temporary-paste",
+    "privacy",
+    "cryptography",
+    "expressjs",
+    "api",
+    "fullstack",
+    "web-security",
+    "end-to-end-encryption",
+    "secure-sharing",
+    "developer-tool"
+  ],
+  "homepage": "https://github.com/syed-mushir/cipherpaste#readme",
+  "bugs": {
+    "url": "https://github.com/syed-mushir/cipherpaste/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syed-mushir/cipherpaste.git"
+  },
+  "license": "MIT",
+  "author": "Syed Mushir",
+  "type": "module",
+  "main": "api/server.js",
+  "scripts": {
+    "start": "node api/server.js",
+    "dev": "nodemon api/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "ioredis": "^5.10.0"
+  }
+}
