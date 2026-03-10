@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CipherPaste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="brand">
+            <h1>CipherPaste</h1>
+            <p class="tagline">End to End Encrypted</p>
+            <p class="description">
+                CipherPaste lets you quickly create simple text pastes and share them instantly.
+                Write your message, generate a paste, and send the link. It is fully safe because it encrypts your paste on the browser itself even we don't know what's inside.
+            </p>
+        </header>
+
+        <form>
+            <textarea id="plainText" rows="6" cols="10" placeholder="Write or paste your text here..."></textarea>
+
+            <div class="form-group">
+                <label for="burnOnRead">Burn on Read</label>
+                <input type="checkbox" id="burnOnRead">
+            </div>
+
+            <div class="form-group">
+                <label for="expiry">Expiry</label>
+                <select id="expiry">
+                    <option value="600">10 Minutes</option>
+                    <option value="1800">30 Minutes</option>
+                    <option value="3600">1 Hour</option>
+                    <option value="21600">6 Hours</option>
+                </select>
+            </div>
+
+            <button id="createBtn" type="button">Create Paste</button>
+        </form>
+
+        <p class="counter">Total characters <span id="charCount">0</span>/4000</p>
+
+        <footer class="footer">
+            <p>Made with &#10084;&#65039; by <a href="https://github.com/syed-mushir" class="github">Syed Mushir</a></p>
+        </footer>
+    </div>
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <h2>Copy Link</h2>
+            <input type="text" id="copyLink" value="" readonly>
+            <button id="copyButton">Copy</button>
+            <button class="close-btn" id="closeModal">&times;</button>
+        </div>
+    </div>
+    
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
