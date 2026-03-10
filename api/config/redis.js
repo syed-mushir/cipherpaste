@@ -1,12 +1,18 @@
 import Redis from 'ioredis'
-import { REDIS_HOST, REDIS_PASSWORD, REDIS_PORT, REDIS_DB } from './env.js'
+import { REDIS_HOST, REDIS_PASSWORD, REDIS_PORT, REDIS_DB, REDIS_URL } from './env.js'
 
-const redis = new Redis({
+let redis = "";
+
+if(REDIS_URL){
+    redis = new Redis(REDIS_URL)
+}else{
+    redis = new Redis({
     port: REDIS_PORT,
     host: REDIS_HOST,
     password: REDIS_PASSWORD,
     db: REDIS_DB
 });
+}
 
 redis.on("error", (err) => {
     console.error('Error in Redis',err);

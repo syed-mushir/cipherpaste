@@ -13,3 +13,4 @@ export const REDIS_HOST = env.REDIS_HOST || 'localhost';
 export const REDIS_PORT = env.REDIS_PORT || 6379;
 export const REDIS_PASSWORD = env.REDIS_PASSWORD || "";
 export const REDIS_DB = env.REDIS_DB || "1";
+export const REDIS_URL= env.REDIS_URL || "";
