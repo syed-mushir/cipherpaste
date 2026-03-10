@@ -2,6 +2,8 @@
 
 CipherPaste is a secure, temporary text-pasting service that encrypts your content in the browser using AES-256-GCM encryption. Built with Node.js, it ensures your data remains private and is only accessible for a limited time and to only you.
 
+**Demo URL - https://paste.mushir.dev/**
+
 ---
 
 ## Prerequisites
