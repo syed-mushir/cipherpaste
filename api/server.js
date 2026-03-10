@@ -4,13 +4,14 @@ import apiRoutes from "./routes/api.routes.js";
 import { fileURLToPath } from 'url';
 import path from 'path';
 import { checkPaste } from "./controllers/checkPaste.js";
+import { globalRateLimitMiddleware } from "./middlewares/rateLimit.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 
 app.use(express.json());
-app.use("/api", apiRoutes);
+app.use("/api", globalRateLimitMiddleware, apiRoutes);
 app.use("/:id", checkPaste(path.join(__dirname, '..' ,'web','view.html')))
 app.use(express.static(path.join(__dirname, '..' ,'web')))
 app.use((req,res) => {

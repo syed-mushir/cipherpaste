@@ -49,7 +49,20 @@ export const doesExist = async (key) => {
     try {
         return await redis.exists(`${key}`);    
     } catch (error) {
-        console.error('Failed to check if exists', error);
+        console.error('Failed to check if key exists', error);
         return  false;
+    }
+}
+
+export const isRateLimitExceed = async (key, expiry, limit) => {
+    try {
+        const inc = await redis.incr(key);
+        if(inc === 1){
+            await redis.expire(key,expiry)
+        }
+        return inc > limit;        
+    } catch (error) {
+        console.error('Error in isRateLimitExceed function',error);
+        return false;
     }
 }
