@@ -36,6 +36,7 @@ Object.assign(pre.style, {
 });
 
 const dec = await viewPaste();
+document.title = 'CipherPaste';
 pre.textContent = dec;
 document.body.innerHTML = '';
 document.body.appendChild(pre);
